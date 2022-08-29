@@ -1,0 +1,13 @@
+apiVersion: v1
+kind: Service
+metadata:
+  name: node-service
+  namespace: prod
+spec:
+  selector:
+    name: node-app
+    env: prod
+  type: LoadBalancer
+  ports:
+  - port: 8080
+    targetPort: 8080
