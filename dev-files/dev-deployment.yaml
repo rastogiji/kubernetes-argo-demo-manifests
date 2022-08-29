@@ -1,20 +1,20 @@
 apiVersion: apps/v1
 kind: Deployment
 metadata:
-  name: node-deployment
-  namespace: prod
+  name: dev-node-deployment
+  namespace: dev
 spec:
   replicas: 1
   selector:
     matchLabels:
       name: node-app
-      env: prod
+      env: dev
   template:
     metadata:
       name: node-pod
       labels:
         name: node-app
-        env: prod
+        env: dev
     spec:
       containers:
       - image: asia-south1-docker.pkg.dev/searce-cloud-consultants/first-repository/app-image:v1

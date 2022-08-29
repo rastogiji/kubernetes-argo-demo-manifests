@@ -1,0 +1,23 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: prod-node-deployment
+  namespace: prod
+spec:
+  replicas: 1
+  selector:
+    matchLabels:
+      name: node-app
+      env: prod
+  template:
+    metadata:
+      name: node-pod
+      labels:
+        name: node-app
+        env: prod
+    spec:
+      containers:
+      - image: asia-south1-docker.pkg.dev/searce-cloud-consultants/first-repository/app-image:v1
+        name: node-container
+        ports:
+        - containerPort: 8080
