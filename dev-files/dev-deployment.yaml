@@ -17,7 +17,7 @@ spec:
         env: dev
     spec:
       containers:
-      - image: asia-south1-docker.pkg.dev/searce-cloud-consultants/first-repository/app-image:v1
+      - image: asia-south1-docker.pkg.dev/searce-cloud-consultants/first-repository/app-image:fee5d3bbc09443dbd8755ba47238901474de549e
         name: node-container
         ports:
         - containerPort: 8080
